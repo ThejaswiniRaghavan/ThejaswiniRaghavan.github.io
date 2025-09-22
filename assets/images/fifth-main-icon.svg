@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256" role="img" aria-label="Database icon (red lines)">
+  <!-- transparent background -->
+  <g transform="translate(32,36)" stroke="#d93025" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <!-- top ellipse -->
+    <ellipse cx="96" cy="20" rx="64" ry="20" />
+    <!-- side verticals -->
+    <path d="M32 20 V132" />
+    <path d="M160 20 V132" />
+    <!-- middle ellipse -->
+    <ellipse cx="96" cy="76" rx="64" ry="20" />
+    <!-- bottom ellipse -->
+    <ellipse cx="96" cy="132" rx="64" ry="20" />
+  </g>
+</svg>
+
