@@ -48,7 +48,7 @@
     $(this).removeClass("hover");
   });
 
-  $(".isotope-wrapper").each(function() {
+$(".isotope-wrapper").each(function() {
     var $isotope = $(".isotope-box", this);
     var $filterCheckboxes = $('input[type="radio"]', this);
 
@@ -60,17 +60,26 @@
       $isotope.isotope({ filter: type });
     };
 
+    // Initialize Isotope
     $isotope.isotope({
       itemSelector: ".isotope-item",
       layoutMode: "masonry"
     });
 
+    // --- START OF FIX ---
+    // This tells Isotope to re-calculate the layout as every single image loads
+    $isotope.imagesLoaded().progress( function() {
+      $isotope.isotope('layout');
+    });
+    // --- END OF FIX ---
+
     $(this).on("change", filter);
     filter();
   });
-
+  
   lightbox.option({
     resizeDuration: 200,
     wrapAround: true
   });
 })(jQuery);
+
