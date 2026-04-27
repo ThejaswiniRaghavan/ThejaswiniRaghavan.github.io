@@ -61,9 +61,18 @@
     };
 
     $isotope.isotope({
-      itemSelector: ".isotope-item",
-      layoutMode: "masonry"
-    });
+    itemSelector: ".isotope-item",
+    layoutMode: "masonry"
+  });
+
+  // ---> NEW CODE: Recalculate Isotope layout as each image loads <---
+  $isotope.imagesLoaded().progress(function() {
+    $isotope.isotope('layout');
+  });
+  // -----------------------------------------------------------------
+
+  $(this).on("change", filter);
+  filter();
 
     $(this).on("change", filter);
     filter();
