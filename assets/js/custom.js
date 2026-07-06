@@ -65,10 +65,9 @@
     layoutMode: "masonry"
   });
 
-  // ---> NEW CODE: Recalculate Isotope layout as each image loads <---
-  $isotope.imagesLoaded().progress(function() {
-    $isotope.isotope('layout');
-  });
+imagesLoaded($isotope.get(0)).on('progress', function() {
+  $isotope.isotope('layout');
+});
   // -----------------------------------------------------------------
 
   $(this).on("change", filter);
